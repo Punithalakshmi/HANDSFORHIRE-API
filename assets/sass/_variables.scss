@@ -1,0 +1,38 @@
+$font-stack :sans-serif;
+$bodyfont: 'RobotoRegular', sans-serif;
+$subfont: 'RobotoLight', sans-serif;
+// $mons: 'Montserrat', sans-serif;
+$awesome: 'FontAwesome';
+
+
+$primary 		:  	#064ba8; // color-blue
+$secondary 		:  	#6a7987; // color-black & text-color
+// $green			:   #b0bf32; // color-green
+
+$red			:	#f93c60; 
+$green 			:	#b0bf32;
+$yellow 		:	#f9a61a;
+
+
+$white 			:	#fff;
+$white-half		:	#f2f2f2;
+$white-semi		:	#fafafa;
+
+$black			:	#6a7987;
+
+$gray 			:	gray;
+$brown 			:	#bb8337;
+
+
+
+/* Custom variables and mixins */
+$font : 'Amaranth', sans-serif;
+$size : 18px;
+$wgt : 400;
+$line : 24px;
+
+.appear {
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	appearance:none; }
+

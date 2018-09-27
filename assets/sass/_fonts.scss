@@ -1,0 +1,31 @@
+$body-font:        "../fonts/Roboto" !default;
+// $heading-font-path:        "../fonts/" !default;
+
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('#{$body-font}/robotocondensed-light-webfont.eot');
+    src: url('#{$body-font}/robotocondensed-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$body-font}/robotocondensed-light-webfont.woff') format('woff'),
+         url('#{$body-font}/robotocondensed-light-webfont.ttf') format('truetype'),
+         url('#{$body-font}/robotocondensed-light-webfont.svg#roboto_condensedlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('#{$body-font}/robotocondensed-regular-webfont.eot');
+    src: url('#{$body-font}/robotocondensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$body-font}/robotocondensed-regular-webfont.woff') format('woff'),
+         url('#{$body-font}/robotocondensed-regular-webfont.ttf') format('truetype'),
+         url('#{$body-font}/robotocondensed-regular-webfont.svg#roboto_condensedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

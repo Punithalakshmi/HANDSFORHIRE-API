@@ -1,0 +1,686 @@
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+
+// Core CSS
+@import "bootstrap/scaffolding"; 
+@import "bootstrap/type";
+@import "bootstrap/code";  
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+
+// Core variables and mixins
+// @import "bootstrap/variables";
+// @import "bootstrap/mixins";
+
+// Reset and dependencies
+// @import "bootstrap/normalize";
+// @import "bootstrap/print";
+// @import "bootstrap/glyphicons";
+
+// Core CSS
+// @import "bootstrap/scaffolding";
+// @import "bootstrap/type";
+// @import "bootstrap/code";
+// @import "bootstrap/grid";
+// @import "bootstrap/tables";
+// @import "bootstrap/forms";
+// @import "bootstrap/buttons";
+
+// Components
+// @import "bootstrap/component-animations";
+   @import "bootstrap/dropdowns";
+   @import "bootstrap/button-groups";
+   @import "bootstrap/input-groups";
+// @import "bootstrap/navs";
+// @import "bootstrap/navbar";
+// @import "bootstrap/breadcrumbs";
+// @import "bootstrap/pagination";
+// @import "bootstrap/pager";
+// @import "bootstrap/labels";
+// @import "bootstrap/badges";
+// @import "bootstrap/jumbotron";
+// @import "bootstrap/thumbnails";
+   @import "bootstrap/alerts";
+   @import "bootstrap/progress-bars";
+// @import "bootstrap/media";
+// @import "bootstrap/list-group";
+// @import "bootstrap/panels";
+// @import "bootstrap/responsive-embed";
+// @import "bootstrap/wells";
+   @import "bootstrap/close";
+   
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+@import "bootstrap/carousel";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+// Compass css3 components
+@import "compass/css3";
+
+@import "variables";
+
+@import "_navbar";
+// CSS3 Animation
+@import "CSS:css/animate";
+// @import "CSS:css/jquery-ui";
+
+// Slick Slider
+@import "slick";
+
+// Font awsome css
+@import "font-awesome/font-awesome";
+@import "fonts";
+
+
+// Common css
+@import "forms";
+@import "common";
+
+// Daterangepicker
+@import "daterangepicker";
+
+
+/// Base path for assets (fonts, images...),
+/// should not include trailing slash
+/// @access public
+/// @type String
+
+$asset-base-path: '../assets' !default;
+
+/// Asset URL builder
+/// @access private
+/// @param {String} $type - Asset type, matching folder name
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the asset
+@function asset($type, $file) {
+  @return url($asset-base-path + '/' + $type + '/' + $file);
+}
+
+/// Image asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the image
+/// @require {function} asset
+@function image($file) {
+  @return asset('img', $file);
+}
+
+/// Font asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the font
+/// @require {function} asset 
+@function font($file) {
+  @return asset('fonts', $file);
+}
+
+
+
+/* Basic CSS */
+
+.tb-row { display:table;}
+.tb-cell { display:table-cell; vertical-align:middle;}
+
+
+
+// Table
+
+.table-sub-header {
+  background-color:rgba($primary, 0.1);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom:1px solid rgba($secondary, 0.3);
+  margin-bottom: 15px;
+
+  a {
+      margin:0 5px;
+    i {
+         -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        margin-right:5px;
+    }
+  }
+  
+
+  .form-control {
+      @media (max-width: $break-xs) {
+        margin-bottom: 15px;
+      }
+  }
+
+
+}
+
+.tableView {
+  border:1px solid rgba($secondary, 0.3);
+  margin:5px 25px;
+  @include border-radius(5px);
+
+  h1 { 
+    padding-bottom:25px; }
+
+    .tableSite {
+      th {
+        color:$primary;
+        font-weight: normal;
+      }
+      th, td {
+        // border:1px solid rgba($secondary, 0.3); 
+        // text-align:center; 
+        padding:10px;
+        font-size:14px;
+      }
+
+      th:last-child {
+        // text-align: left; 
+        // padding-left: 20px;
+      }
+    }
+    
+    .imageAside p:last-of-type { 
+      padding-bottom:0; }
+}
+
+
+
+// Generic Slide
+.genericSlide {  /*max-width: 650px;*/  margin:0 auto }
+.capImg { font-size:12px; padding-top:5px; }
+
+.triangleArrow.slick-prev, .triangleArrow.slick-next { border:none; cursor:pointer; margin-top:-48px; position:absolute; top:50%; width:39px; }
+.triangleArrow.slick-prev { left:-1px; }
+.triangleArrow.slick-next { right:-1px; text-align:right; }
+
+
+@media screen and (max-width:540px) {
+  .tableSite thead { display:none; }
+  .tableSite td { border:none; display:block; position: relative; padding-left: 40%;  width:100%; text-align: right !important; }
+  .tableSite td:before { content:attr(data-title); position: absolute; left: 15px; width: 40%; color:$primary; text-align: left; }
+  .tableSite td:last-child { border-bottom:3px solid rgba($secondary, 0.5); padding-left:40%; }
+}
+
+// [data-role="banner"] {
+//     min-height: 600px;
+//     background-image: image('images/banner/default.png');
+//     background-size: 100% auto;
+//     background-color:$pink ;
+
+// } 
+
+svg.custom-svg { width:150px; height:150px}
+svg.custom-svg path {fill: $green !important; stroke:$white !important;}
+
+
+
+// custom codes
+
+.logo {
+  border-bottom: 3px solid $green;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.sidebar {
+  min-height: 100vh;
+  background-color:$primary;
+  @include background-image(linear-gradient($primary, #00306b));
+  // margin-left: -15px;
+  // margin-right: -15px;
+
+  nav {
+    margin-top: 50px;
+    // padding-left: 15px;
+    // padding-right: 15px;
+    li {
+      a {
+        color:$white;
+        font-size:14px;
+        display: block;
+        line-height: 42px;
+        text-transform: uppercase;
+
+        i {
+          width:32px; 
+          text-align:center
+        }
+
+      }
+      border-bottom:1px solid rgba($white, 0.1);
+      @include transition(background-color .3s ease);
+      padding:0 30px;
+      margin-left: -15px;
+      margin-right: -15px;
+
+
+      &:hover {
+          background-color: rgba($white, 0.1);
+        }
+      &.active {
+          background-color: rgba($white, 0.1);
+        }  
+
+      @media (max-width: $break-xs) { 
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+.sidebar-menu {
+  
+  li.active {
+      a {
+        i.trigger {
+          transform: rotate(180deg);
+        }
+      }
+      .sidebar-submenu {
+        display: block;
+      }
+    }
+
+    .sidebar-submenu {
+      display: none;
+      li {
+        i.trigger {
+          font-size: 16px !important; 
+          margin-top:13px !important
+        }
+      }
+    }
+}
+
+
+.sidebar-menu > li {
+  position:relative;
+
+  .sidebar-submenu  {
+    text-indent:30px;
+      a {
+        color:rgba($white-semi, 0.6);
+      }
+     }
+  
+  .trigger {
+    position:absolute;
+    right:25px;
+    top:15px; }
+}
+
+
+
+// Global assetes
+
+
+// default pages 
+
+.page-login {
+  background-color:#0d8dc1;
+  min-height: 100vh;
+}
+
+.form-login {
+  max-width:550px;
+  height: 450px;
+  background-color:white;
+  @include border-radius(5px);
+  position: absolute;
+  margin:auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding:40px 130px 60px;
+
+  @media (max-width: $break-xs) {
+    padding-right:10px; 
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-top: 150px;
+    margin-right: 10px;
+    position:inherit;
+    height: inherit;
+  }
+
+    .form-group {
+      margin-bottom: 15px;
+        input[type='text'],
+          input[type='password'] {
+            background-color:$white-half;
+          } // input
+       } // form-group
+
+       // label#forGot {
+       //  display: block;
+       //  width: 100%;
+       //  padding: 0 15px;
+
+       //  &:after {
+       //    right:15px;
+       //  }
+       // }
+
+       [for="forGot"] {
+         width:100%;
+
+         &:after {
+          right:0px;
+         }
+        }
+
+       
+        .icon-forgot {
+          border:1px solid rgba($secondary, 0.1);
+          background-color: rgba($primary, 0.1);
+          width:38px;
+          height:38px;
+          display:inline-block;
+          text-align:center;
+          line-height:38px; }
+
+} //form-login
+
+// top-search
+
+.top-search {
+  input[type='search'] {
+    border-color:transparent;
+    padding-left: 55px;
+    height:45px;
+      box-shadow:0 0 0 transparent;
+
+      &:hover, &:focus {
+        border-color:transparent;
+        box-shadow:0 0 0 transparent;
+      } // top-search input :hover :focus
+
+  } // top-search input
+
+  .form-group {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    position: relative;
+
+      &:before {
+      display: inline-block;
+      font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+      font-size: inherit; // can't have font-size inherit on line above, so need to override
+      text-rendering: auto; // optimizelegibility throws things off #1094
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+        content: $fa-var-search;
+        position: absolute;
+        left: 20px;
+        top: 30%;
+        color:rgba($secondary, 0.5);
+      } // top-search > form group:before
+  } // top-search > form group
+
+
+}
+
+
+
+hr {
+  border-color:rgba($secondary, 0.3)
+}
+
+
+.table-filter {
+  position: relative;
+
+  input {
+    padding-left: 35px;
+  } // table-filter input
+
+  &:before {
+      display: inline-block;
+      font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+      font-size: inherit; // can't have font-size inherit on line above, so need to override
+      text-rendering: auto; // optimizelegibility throws things off #1094
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+        content: $fa-var-search;
+        position: absolute;
+        left: 10px;
+        top: 30%;
+        color:rgba($secondary, 0.5);
+      } // table-filter :before
+} // table-filter
+
+
+
+
+
+
+
+// *
+
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    background-color:transparent;
+      &:hover, &:focus {
+        // background-color: rgba($secondary, 0.1);
+      }
+
+}
+
+// .dropbtn:hover, .dropbtn:focus {
+//     background-color: #3e8e41;
+// }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+
+    a:hover {
+      background-color: $primary;
+      color:$white-semi;
+    }
+}
+.dropdown.open {
+  z-index: 1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    text-align:left;
+    background-color: $white-semi;
+    min-width: 160px;
+    // overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba($secondary, 0.2);
+    z-index: 99;
+    right: 0;
+    margin-top: 10px;
+    border-top: 2px solid $secondary;
+
+    &:before {
+        content:"";
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid $secondary;
+        position:absolute;
+        top:-6px;
+        right:10px;
+    }
+
+    a {
+        color: $secondary;
+        padding: 6px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        border-bottom:1px solid rgba($secondary, 0.3);
+
+        &:last-child {
+          border-color:transparent;
+        }
+    }
+}
+
+.show {display:block;}
+
+
+.custom-dropdwon {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+
+  i {
+    color: $white;
+    background: rgba($yellow, 0.8);
+    padding: 5px;
+    @include border-radius(50%);
+    width: 25px;
+    height: 25px;
+    line-height: 17px;
+    text-align: center;
+
+  }
+}
+// *
+
+
+.user-pic {
+  padding-top: 10px;
+  position: relative;
+  z-index: 999;
+  img {
+    max-width:48px;
+    max-height:48px;
+    @include border-radius(50%);
+    border:1px solid $yellow;
+    box-shadow: 0px 8px 16px 0px rgba($secondary, 0.2);
+  } // user-pic img
+} // user-pic
+
+
+
+// .payroll-record{ background:$white;}
+
+.payroll{ 
+  margin: 25px; 
+  border:1px solid rgba($secondary, 0.3); 
+  border-radius:5px; 
+  background:$white-semi;}
+
+.payroll-add{
+  border-bottom:1px solid rgba($secondary, 0.3);
+  form {
+    padding: 15px
+  } // payroll-add fornm
+} // payroll-add
+
+
+.empty-record {
+  background:white;
+  border-radius:10px;
+  padding:15px;
+  min-height:250px;
+
+  p {
+    line-height: 240px;
+    padding-bottom: 0;
+  } // empty-record p
+} // empty-record
+
+
+
+.table-timesheet  {
+ input {
+   max-width:70px;
+ }  // table-timesheet
+} // table-timesheet
+
+
+
+// filter-row
+.filter-column {
+  .filter-row {
+    label {
+      font-size:14px;
+    }
+
+    margin-bottom: 15px;
+  } // filter-row
+} // filter-row
+
+
+.user-wrapper {
+  height:90vh;
+  overflow-y:auto;
+  border-left:1px solid rgba($secondary, 0.5);
+  padding-left: 15px;
+  @include scrolling-shadows;
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color:transparent;
+}
+
+.single-user {
+    label { 
+      padding-right: 0;
+      padding-left: 35px;
+
+      &:hover {
+        color:$primary;
+      }
+
+      &:after {
+        right:inherit;
+        left:0;
+      } // single-user > label:after
+
+    margin-left:-5px;
+
+    } // single-user > label
+
+    .ui-state-active{
+      color:#289a05;
+
+      &:hover {
+        color:#289a05;
+      }
+    }
+  } // single-user
+
+
+.emp-list {
+  background:rgba($yellow, 0.1);
+  border-bottom:1px solid rgba($secondary, 0.1);
+  h3 {
+    font-size:14px;
+    margin:0;
+    padding-left:15px;
+    padding-top:15px;
+    border-left:1px solid rgba($secondary, 0.5);
+
+  }
+}
+
+
+
